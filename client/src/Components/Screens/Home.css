@@ -1,0 +1,7 @@
+.home-card{
+    margin: 26px auto;
+    max-width: 950px;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid black;
+}

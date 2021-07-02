@@ -1,0 +1,13 @@
+.Createpost{
+    margin: 10px auto;
+    max-width: 550px;
+    border: 1px solid black;
+    box-shadow:3px  black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+.brand-logo{
+    font-family: 'Grand Hotel', cursive
+  }

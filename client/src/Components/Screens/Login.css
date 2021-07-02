@@ -1,0 +1,13 @@
+.brand-logo{
+    font-family: 'Grand Hotel', cursive
+  }
+  .auth-card{
+    padding: 40px;
+   text-align: center;
+   justify-content: center;
+   max-width: 400px;
+   margin: 10px auto;
+  }
+  .bttn{
+    margin-top: 3%;
+  }

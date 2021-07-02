@@ -1,0 +1,46 @@
+.profile{
+    max-width: 950px;
+    margin: 0px auto;
+}
+.profile-img{
+    height: 15vw;
+    width:15vw;
+    border-radius: 20rem;
+}
+.profile-display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px auto;
+    max-width: 100%;
+    border-bottom: 1px solid black;
+}
+.profile-display h3{
+    font-size: 3vw;
+    font-weight: 900;
+}
+.profile-content{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    width: 107%;
+    font-size:1.5vw
+   
+}
+.profile-content h5{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0vw;
+    margin:1vw ;
+    font-size: 2vw;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item{
+width :30%;
+margin: 2%;
+}
