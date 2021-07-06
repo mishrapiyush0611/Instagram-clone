@@ -6,12 +6,16 @@ const bcrypt= require('bcrypt')
 const jwt= require('jsonwebtoken')
 const {JWT_SECRET}=require('../keys')
 const RequireLogin = require('../middleware/RequireLogin')
+const nodemailer=require('nodemailer')
+const sendgridtransport=require('nodemailer-sendgrid-transport')
 
 
+const transporter=nodemailer.createTransport(sendgridtransport({
+    auth:{
+        api_key:"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"
+    }
+}))
 
-// router.get('/protected',RequireLogin,(req,res)=>{
-//     res.send("Hello User")
-// })
 router.post('/signup',(req,res)=>{
     
     const {name,email,password}=req.body
@@ -34,9 +38,16 @@ router.post('/signup',(req,res)=>{
             email,
             password:hashedpassword,
             name,
+            
         })
         user.save()
         .then(user=>{
+            transporter.sendMail({
+                to:user.email,
+                from:"no-reply@insta.com",
+                subject:"Signup Success",
+                html:"<h1>Welcome to Instagram</h1>"
+            })
             res.json({message:"the user is saved succesfully"})
         })
         .catch(err=>{
@@ -50,7 +61,7 @@ router.post('/signup',(req,res)=>{
 })
 
 })
-router.post('/signin',(req,res)=>{
+router.post('/login',(req,res)=>{
     const{name,email,password}=req.body
     
     User.findOne({email:email })

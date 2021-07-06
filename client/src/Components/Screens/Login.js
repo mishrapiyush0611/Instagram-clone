@@ -10,7 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const LoginData = () => {
        
-        fetch("/signin", {
+        fetch("/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
@@ -29,11 +29,13 @@ const Login = () => {
                     M.toast({ html: data.error, classes: "#c62828 red darken-2" })
                 }
                 else {
+                    window.location.reload();
                     localStorage.setItem("jwt",data.token)
                     localStorage.setItem("user",JSON.stringify(data.user))
                     dispatch({type:"User",payload:data.User})
                     M.toast({ html: "Login Success", classes: '#1b5e20 green darken-1' })
                     history.push('/')
+                   
                 }
             })
 
@@ -63,11 +65,12 @@ const Login = () => {
                     class="btn waves-effect waves-light bttn  blue darken-1"
                     type="submit"
                     name="action"
+                
                     onClick={() => LoginData()}>Submit
                     <i class="material-icons right"></i>
                 </button>
                 <h6 className="account-available" >
-                    <Link to="/signup"> Don't have an account?</Link></h6>
+                    <Link to="/signup" > Don't have an account?</Link></h6>
             </div>
         </div>
 
