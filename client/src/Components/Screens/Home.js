@@ -112,6 +112,7 @@ const Home = () => {
                     
                     return (
                         
+                        
 
                         <div className="card home-card">
                              <h6 style={{float:"left"}}>{item.postedBy.name}</h6>
