@@ -22,6 +22,15 @@ router.get('/user/:id',RequireLogin,(req,res)=>{
         res.json("user not found")
     })
 })
-
+router.post('/search-users',(req,res)=>{
+    let searchpattern= new RegExp('^'+req.body.query)
+    User.find({email:{$regex:searchpattern}})
+    .then(user=>{
+        res.json({user})
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
 
 module.exports = router
