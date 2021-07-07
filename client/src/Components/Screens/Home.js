@@ -1,5 +1,6 @@
 import React, { useEffect, useState,useContext } from 'react'
 import {UserContext} from '../../App'
+import { Link } from 'react-router-dom'
 import './Home.css'
 const Home = () => {
     const {state,dispatch}=useContext(UserContext)
@@ -111,11 +112,11 @@ const Home = () => {
                    
                     
                     return (
-                        
+
                         
 
                         <div className="card home-card">
-                             <h6 style={{float:"left"}}>{item.postedBy.name}</h6>
+                             <h3 ><Link to={"/Profile/"+item.postedBy._id}>{item.postedBy.name}</Link></h3>
                             
                             <div className="card-image">
                                 <img src={item.photo}></img>

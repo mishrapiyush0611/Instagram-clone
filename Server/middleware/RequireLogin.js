@@ -13,8 +13,6 @@ module.exports=(req,res,next)=>{
  
     jwt.verify(token,JWT_SECRET,(err,payload)=>{
        
-        
-
         if(err){
             console.log("bearer")
             return res.status(402).json({error:"User must be logged in"})

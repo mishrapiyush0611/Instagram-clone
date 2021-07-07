@@ -17,8 +17,9 @@ router.get('/allpost',RequireLogin,(req,res)=>{
         console.log("error occured",err)
     })
 })
-router.get('/mypost',(req,res)=>{
-    Post.find()
+router.get('/mypost',RequireLogin,(req,res)=>{
+    console.log()
+    Post.find({postedBy:req.user._id})
     .populate('postedby','_id name')
     .then(myposts=>{
         res.json({myposts})
@@ -102,6 +103,7 @@ router.put('/comment',RequireLogin,(req,res)=>{
         }
     })
 })
+
 // router.delete('/deletepost/:postId',RequireLogin,(req,res)=>{
 //     Post.findOne({_id:req.params.postId})
 //     .populate("postedBy","_id name")
