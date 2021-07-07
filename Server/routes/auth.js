@@ -18,7 +18,7 @@ const transporter=nodemailer.createTransport(sendgridtransport({
 
 router.post('/signup',(req,res)=>{
     
-    const {name,email,password}=req.body
+    const {name,email,password,pic}=req.body
     if(!email || !password ||!name ){
         return res.json({error:'please enter all fields'})
     }
@@ -38,6 +38,7 @@ router.post('/signup',(req,res)=>{
             email,
             password:hashedpassword,
             name,
+            pic
             
         })
         user.save()
@@ -78,8 +79,8 @@ router.post('/login',(req,res)=>{
             const token=jwt.sign({_id:saveduser._id}, JWT_SECRET, {
                 expiresIn: 100000
                },)
-               const {_id,name,email}=saveduser
-            res.json({token,user:{_id,name,email}})
+               const {_id,name,email,pic}=saveduser
+            res.json({token,user:{_id,name,email,pic}})
             // res.json({message:"user registered succefully"})
         }
         else{

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link ,useHistory} from 'react-router-dom'
 import M from 'materialize-css'
 import './Login.css'
@@ -7,8 +7,33 @@ const Signup = () => {
      const[name,setName]=useState("")
      const[email,setEmail]=useState("")
      const[password,setPassword]=useState("")
-     const Postdata=()=>{
-         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ .test(email)){
+     const[image,setImage]=useState("")
+     const[url,setUrl]=useState(undefined)
+     useEffect(()=>{
+            if(url){
+                uploadFields()
+            }
+     },[url])
+
+     const UploadPic=()=>{
+        const data = new FormData()
+        data.append("file", image)
+        data.append("upload_preset", "insta-clone")
+        data.append("cloud_name", "instagram-piyush")
+        fetch("https://api.cloudinary.com/v1_1/instagram-piyush/image/upload", {
+          method: "post",
+          body: data
+    
+        }).then(res => res.json())
+          .then(data => {
+            setUrl(data.url)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+     }
+     const uploadFields=()=>{
+        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ .test(email)){
             M.toast({html: "Enter Correct Email" ,classes:"#c62828 red darken-3"})
             return 
 
@@ -22,6 +47,7 @@ const Signup = () => {
                  email,
                  name,
                  password,
+                 pic:url
 
              })
             }).then(res=>res.json())
@@ -34,6 +60,17 @@ const Signup = () => {
                 history.push('/login')
                }
          })
+     }
+     const Postdata=()=>{
+
+        if(image){
+            UploadPic()
+        }
+        else{
+            uploadFields()
+        }
+
+         
         
      }
     return (
@@ -66,6 +103,15 @@ const Signup = () => {
                  onChange={(event)=>setPassword(event.target.value)} >
 
                 </input>
+                <div class="file-field input-field">
+        <div class="btn">
+          <span>UPLOAD PIC</span>
+          <input type="file" onChange={(event) => setImage(event.target.files[0])} />
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" style={{ borderBottom: "0px white" }} />
+        </div>
+      </div>
                 <button class="btn waves-effect waves-light blue darken-1"
                  type="submit"
                  name="action"
