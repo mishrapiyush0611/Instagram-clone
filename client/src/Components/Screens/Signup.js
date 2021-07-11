@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { Link ,useHistory} from 'react-router-dom'
+import insta from '../Images/signup-pics.jpg'
 import M from 'materialize-css'
 import './Login.css'
 const Signup = () => {
@@ -33,11 +34,7 @@ const Signup = () => {
           })
      }
      const uploadFields=()=>{
-        if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ .test(email)){
-            M.toast({html: "Enter Correct Email" ,classes:"#c62828 red darken-3"})
-            return 
-
-         }
+        
          fetch("/signup",{
              method:"post",
              headers:{
@@ -77,6 +74,7 @@ const Signup = () => {
        
         
         <div className="mycard">
+           <img src={insta}></img>
             <div className="card auth-card">
 
                 <h2 className="brand-logo">Instagram</h2>
@@ -91,7 +89,7 @@ const Signup = () => {
 
                 <input 
                 type="text"
-                 placeholder="Email"
+                 placeholder="Username"
                  value={email}
                  onChange={(event)=>setEmail(event.target.value)}>
 
@@ -112,15 +110,16 @@ const Signup = () => {
           <input class="file-path validate" type="text" style={{ borderBottom: "0px white" }} />
         </div>
       </div>
-                <button class="btn waves-effect waves-light blue darken-1"
+                <button class="btn waves-effect waves-light black darken-1"
                  type="submit"
                  name="action"
                  onClick={()=>Postdata()}>Submit
                     <i class="material-icons right"></i>
                 </button>
                 <h6 className="account-available" >
-                <Link to="/login"> Already have an account?</Link>
+                Already have an account?
                     </h6>
+                    <button  className="btn waves-effect waves-light bttn  blue lighten-3" style={{color:"white"}} ><Link to="/login"  > Login</Link></button>
             </div>
         </div>
 

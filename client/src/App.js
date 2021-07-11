@@ -32,7 +32,7 @@ const Routing = () => {
       <Home></Home>
     </Route>
     <Route path='/Login'>
-      <Login></Login>
+      <Login ></Login>
     </Route>
     <Route path='/Signup'>
       <Signup></Signup>

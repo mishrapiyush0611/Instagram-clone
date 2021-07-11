@@ -2,6 +2,7 @@ import React, { useContext,useRef ,useEffect, useState} from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../App'
 import M from 'materialize-css'
+import './Navbar.css'
 const Navbar = () => {
   const [search,setsearch]=useState('')
   const [userdetails,setuserdetails]=useState([])
@@ -32,8 +33,8 @@ const Navbar = () => {
       ]
     } else
       return [
-        <li><Link to="/Login">Login</Link></li>,
-        <li><Link to="Signup">Signup</Link></li>
+        <li className="Navbar-link"><Link to="/Login">Login</Link></li>,
+        <li className="Navbar-link"><Link to="Signup">Signup</Link></li>
 
       ]
   }
@@ -61,8 +62,8 @@ const Navbar = () => {
   
   return (
     <nav>
-      <div className="nav-wrapper white">
-        <Link to={state ? "/" : "/login"} className="brand-logo left">Instagram</Link>
+      <div className="nav-wrapper grey lighten-4 text-primary">
+        <Link to={state ? "/" : "/login"} className="brand-logo left" id="navbar-home">Instagram</Link>
         <ul id="nav-mobile" className="right">
 
           {RenderList()}

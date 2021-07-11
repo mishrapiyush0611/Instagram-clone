@@ -112,15 +112,15 @@ const Home = () => {
                    
                     
                     return (
-
+                        <>
                         
 
-                        <div className="card home-card">
+                        <div className="card home-card ">
                              <h3 ><Link to={"/Profile/"+item.postedBy._id}>{item.postedBy.name}</Link></h3>
                             
                             <div className="card-image">
                                 <img src={item.photo}></img>
-                                <div className="card-title"></div>
+
                             </div>
                             <div className="card-content">
                                 <i className="material-icons" style={{ color: "red" }}>favorite</i>
@@ -153,6 +153,7 @@ const Home = () => {
                             </div>
                             </form>
                         </div>
+                        </>
                     )
                 })
             }
