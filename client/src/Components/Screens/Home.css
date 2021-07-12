@@ -1,10 +1,14 @@
+
 .home-card{
     margin: 26px auto;
-    max-width: 950px;
+    max-width: 750px;
     justify-content: center;
     align-items: center;
-    border: 4px solid black;
+    border: 2px solid black;
     width: 100%;
+   height: auto;
+   border-radius: 10px;
+   box-shadow: 2px 2px 2px 2px black;
 }
 .home{
     display: flex;
@@ -12,6 +16,62 @@
     margin: auto;
 }
 .card-image{
-    height: 50%;
     width: 100%;
+    height: 45vh !important;
+    
+    padding: 5px;
+}
+.card-image img{
+  height: 100%;
+  
+}
+.postedBy{
+    display: flex;
+    flex-direction: row;
+  
+    
+    
+}
+.postedBy span{
+    font-size: 30px;
+    text-align: center;
+    margin-top:10px ;
+   
+
+}
+.person-name{
+    margin-left: 10px;
+}
+.postedBy img{
+    width:50px;
+    height:50px;
+    border-radius: 50px; 
+    margin-top: 5px;
+    margin-left: 10px;  
+}
+@media only screen and (max-width:700px) {
+    .home-card{
+        margin: 26px auto;
+        max-width: 550px;
+        justify-content: center;
+        align-items: center;
+        border: 4px solid black;
+        width: 100%;
+       height: auto;
+       border-radius: 30px;
+       box-shadow: 5px 5px 5px 5px grey;
+    }
+}
+@media only screen and (max-width:400px) {
+    .home-card{
+        margin:  auto;
+        max-width: 330px;
+        justify-content: center;
+        align-items: center;
+        border: 4px solid black;
+        width: 100%;
+       height: auto;
+       border-radius: 30px;
+       box-shadow: 5px 5px 5px 5px grey;
+    }
 }

@@ -36,9 +36,9 @@ const Profile = () => {
                 </div>
                 <div>
                     <h3 className="Name">{userProfile.user.name}</h3>
-                    <h6 className="Name">{userProfile.user.email}</h6>
+                 
                     <div className="profile-content">
-                        <h5>Posts 2</h5>
+                        <h5>Posts {userProfile.posts.length}</h5>
                         <h5>
                             Followers 400 </h5>
                         <h5> Followers 400

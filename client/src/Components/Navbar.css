@@ -1,9 +1,30 @@
 #navbar-home{
     margin-left: 30px !important;
-    font-size: 40px;
+    font-size: 50px;
 }
 .Navbar-link{
-    margin-right:10px !important ;
-    font-size: 55px !important;
+    
+    font-size: 20px ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
+}
+
+@media only screen and (max-width:700px){
+    .Navbar-link span{
+        display: none;
+        font-size: 1rem ;
+        font-family: cursive;
+        font-weight: 500;
+    }
+    .Navbar-link{
+        margin-right:-10px !important ;
+        font-size: 12px ;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+    }
+    
+    #navbar-home{
+        margin-left: 10px !important;
+        font-size: 2rem;
+    }
 }

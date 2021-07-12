@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import M from 'materialize-css'
+import post_gif from '../Images/post.gif'
 import './Createpost.css'
 
 const CreatePost = () => {
@@ -60,19 +61,23 @@ const CreatePost = () => {
   }
 
   return (
-    <div className="card Createpost">
+    <div className="post">
+      <img src={post_gif}></img>
+    <div className="card Createpost" id="cards">
       <h2 className="brand-logo">Instagram</h2>
       <div class="input-field col s12">
         {/* <textarea id="textarea1" class="materialize-textarea"></textarea> */}
-        <input placeholder="Title" value={title} onChange={(event) => setTitle(event.target.value)}></input>
+        <input className="mainLoginInput" placeholder="&#61461; Location" value={title} onChange={(event) => setTitle(event.target.value)}></input>
       </div>
       <div class="input-field col s12">
         {/* <textarea id="textarea1" class="materialize-textarea"></textarea> */}
-        <input placeholder="Body" value={body} onChange={(event) => setBody(event.target.value)}></input>
+        <input className="mainLoginInput" placeholder="&#61597; Caption" value={body} onChange={(event) => setBody(event.target.value)}></input>
       </div>
       <div class="file-field input-field">
         <div class="btn">
+       
           <span>UPLOAD IMAGE</span>
+          <i class="material-icons right">camera_alt</i>
           <input type="file" onChange={(event) => setImage(event.target.files[0])} />
         </div>
         <div class="file-path-wrapper">
@@ -82,6 +87,7 @@ const CreatePost = () => {
       <button class="btn waves-effect waves-light blue darken-1" type="submit" name="action" onClick={() => Postdetails()}>Submit Post
         <i class="material-icons right"></i>
       </button>
+    </div>
     </div>
   )
 }

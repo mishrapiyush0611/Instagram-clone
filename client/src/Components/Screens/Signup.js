@@ -79,8 +79,9 @@ const Signup = () => {
 
                 <h2 className="brand-logo">Instagram</h2>
                 <input 
+                 className="mainLoginInput"
                 type="text" 
-                placeholder="Name" 
+                placeholder="&#61450;   Name" 
                 value={name}
                 onChange={(event)=>setName(event.target.value)}>
 
@@ -88,22 +89,26 @@ const Signup = () => {
                 
 
                 <input 
+                 className="mainLoginInput"
                 type="text"
-                 placeholder="Username"
+                 placeholder="&#61447;   Username"
                  value={email}
                  onChange={(event)=>setEmail(event.target.value)}>
 
                 </input>
                 <input 
+                 className="mainLoginInput"
                 type="text"
-                 placeholder="Password"
+                 placeholder=" &#61475;   Password"
                  value={password}
                  onChange={(event)=>setPassword(event.target.value)} >
 
                 </input>
                 <div class="file-field input-field">
         <div class="btn">
-          <span>UPLOAD PIC</span>
+        <i class="material-icons right">folder</i>
+          <span>Upload Proflie Pic</span>
+
           <input type="file" onChange={(event) => setImage(event.target.files[0])} />
         </div>
         <div class="file-path-wrapper">
@@ -113,7 +118,8 @@ const Signup = () => {
                 <button class="btn waves-effect waves-light black darken-1"
                  type="submit"
                  name="action"
-                 onClick={()=>Postdata()}>Submit
+                 onClick={()=>Postdata()}>
+                    <i class="material-icons right">send</i>Signup
                     <i class="material-icons right"></i>
                 </button>
                 <h6 className="account-available" >

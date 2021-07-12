@@ -56,16 +56,20 @@ const Login = () => {
                     <div className="auth-card">
         
                         <h2 className="brand-logo">Instagram</h2>
+                        
                         <input
+                        className="mainLoginInput"
                             type="text"
-                            placeholder="Username"
+                            placeholder="&#61447;  Username"
+                            
                             value={email}
                             onChange={(event) => setEmail(event.target.value)}>
 
                         </input>
                         <input
+                         className="mainLoginInput"
                             type="password"
-                            placeholder="Password"
+                            placeholder="&#61475;   Password"
                             value={password}
                             onChange={(event) => setPassword(event.target.value)}>
 
@@ -77,14 +81,16 @@ const Login = () => {
                             type="submit"
                             name="action"
 
-                            onClick={() => LoginData()}>Submit
+
+                            onClick={() => LoginData()}>
+                                 <i class="material-icons right">send</i>Login
                             <i class="material-icons right"></i>
                         </button>
                 
                       
                         <h6 className="account-available" >Don't Have an Account?
                         </h6>
-                            <button  className="btn waves-effect waves-light bttn  purple lighten-3" style={{color:"white"}} ><Link to="/signup"  > Signup</Link></button>
+                            <button  className="btn waves-effect waves-light bttn  purple lighten-3"  id="have-ac"style={{color:"white"}} ><Link to="/signup"  > Signup</Link></button>
                     </div>
                 </div>
             </div>

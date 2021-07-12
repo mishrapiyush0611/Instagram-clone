@@ -1,6 +1,6 @@
 .Createpost{
     margin: 10px auto;
-    max-width: 550px;
+    max-width: 950px;
     border: 1px solid black;
     box-shadow:3px  black;
     text-align: center;
@@ -8,6 +8,99 @@
     align-items: center;
     padding: 4rem;
 }
+#cards{
+    width: 30% !important;
+    border-radius: 50px !important;
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%) !important;
+}
 .brand-logo{
     font-family: 'Grand Hotel', cursive
-  }
+}
+.post{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+}
+.post img{
+    width: 50%;
+}
+@media  only screen and (max-width:1000px){
+    #cards{
+        width: 50% !important;
+    }
+} 
+@media  only screen and (max-width:700px) {
+    .post{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+.Createpost{
+    margin: 10px auto;
+    max-width: 950px;
+    width: 100%;
+    border: 1px solid black;
+    box-shadow:3px  black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+#cards{
+    width: 80% !important;
+    border-radius: 50px !important;
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%) !important;
+}
+.post img{
+    width: 100%;
+}
+.card{
+    margin: 20px;
+}
+}
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.mainLoginInput{
+  height: 40px;
+  padding: 0px;
+  font-size: 30px;
+  margin: 5px 0;
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: 100;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+color: rgb(53, 48, 48);
+font-size: 22px;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: 100;
+font-size: 22px;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+color: grey
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: FontAwesome;
+font-size: 22px;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+padding-left: 5px;
+padding-top: 2px;
+color: black
+}
