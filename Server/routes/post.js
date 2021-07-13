@@ -18,11 +18,13 @@ router.get('/allpost',RequireLogin,(req,res)=>{
     })
 })
 router.get('/mypost',RequireLogin,(req,res)=>{
-    console.log()
+    console.log('inside mypost')
     Post.find({postedBy:req.user._id})
     .populate('postedby','_id name')
     .then(myposts=>{
-        res.json({myposts})
+      
+        let count = myposts.length
+        res.json(myposts)
     })
     .catch(err=>{
         console.log("error occured",err)

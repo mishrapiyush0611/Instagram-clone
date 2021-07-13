@@ -19,7 +19,7 @@ const Profile = () => {
             }
         }).then(res => res.json())
         .then(result => {
-           console.log(result.user)
+           console.log(result)
            setprofile(result)
            
         })
@@ -39,10 +39,7 @@ const Profile = () => {
                  
                     <div className="profile-content">
                         <h5>Posts {userProfile.posts.length}</h5>
-                        <h5>
-                            Followers 400 </h5>
-                        <h5> Followers 400
-                        </h5>
+                        
 
 
                     </div>

@@ -139,10 +139,15 @@ const Home = () => {
 
 
                                     <p>{item.body}</p>
-                                    {
+                                   
+                                    
+                                    { 
                                         item.comments.map(record => {
                                             return (
-                                                <span>{record.postedBy.name}<h5>{record.text}</h5></span>
+                                                <div>
+                                                <h5>Comments</h5>
+                                                <h6>{record.postedBy.name}:  <span>{record.text}</span></h6>
+                                                </div>
                                             )
                                         })
                                     }
